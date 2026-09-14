@@ -28,10 +28,12 @@ export default function OrderCustomizerScreen() {
 
   function handleDecrease() {
     // TODO 4: Prevent quantity from going below 1.
+    setQuantity((current) => Math.max(1, current - 1));
   }
 
   function handleIncrease() {
     // TODO 5: Increase quantity by 1.
+    setQuantity((current) => current + 1);
   }
 
   function handleToggleAddOn(id) {
