@@ -25,6 +25,7 @@ export default function OrderCustomizerScreen() {
   const [orderAdded, setOrderAdded] = useState(false);
 
   // TODO 3: Create instructionsRef with useRef() in Step 4.
+  const instructionsRef = useRef(null);
 
   function handleDecrease() {
     // TODO 4: Prevent quantity from going below 1.
@@ -73,11 +74,12 @@ export default function OrderCustomizerScreen() {
             placeholderTextColor={colors.muted}
             style={styles.input}
             value={instructions}
+            ref={instructionsRef}
           />
 
           <Pressable
             // TODO 9: Focus the TextInput with useRef() in Step 4.
-            onPress={() => {}}
+            onPress={() => instructionsRef.current?.focus()}
           >
             <Text style={styles.focusLink}>Tap to focus instructions</Text>
           </Pressable>
